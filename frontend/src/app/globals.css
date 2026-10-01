@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #090a0f;
+    --bg-card: #11131d;
+    --bg-card-hover: #161926;
+    --bg-input: rgba(255, 255, 255, 0.04);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(249, 115, 22, 0.4);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-orange: #f97316;
+    --accent-glow: rgba(249, 115, 22, 0.35);
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #232738;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+/* Gradients and Effects */
+.gradient-text-orange {
+  background: linear-gradient(135deg, #ff944d 0%, #f97316 45%, #ef4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.orange-glow-btn {
+  background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+  box-shadow: 0 0 20px -3px rgba(249, 115, 22, 0.4);
+  transition: all 0.25s ease;
+}
+
+.orange-glow-btn:hover {
+  box-shadow: 0 0 30px 2px rgba(249, 115, 22, 0.6);
+  transform: translateY(-1px);
+}
+
+.orange-border-glow {
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  box-shadow: 0 0 15px -3px rgba(249, 115, 22, 0.15);
+}
+
+.orange-border-glow:hover {
+  border-color: rgba(249, 115, 22, 0.6);
+  box-shadow: 0 0 25px 0px rgba(249, 115, 22, 0.25);
+}
+
+.glass-panel {
+  background: rgba(17, 19, 29, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(22, 25, 39, 0.9);
+  border-color: rgba(249, 115, 22, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px -10px rgba(249, 115, 22, 0.15);
+}
+
+.ambient-orange-glow {
+  background: radial-gradient(circle at 50% -20%, rgba(249, 115, 22, 0.18), transparent 70%);
+}
+
+.ambient-hero-blob {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(239, 68, 68, 0.04) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Shimmer animation for progress bars */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+/* Ping delay utilities */
+.delay-150 { animation-delay: 150ms; }
+.delay-700 { animation-delay: 700ms; }
